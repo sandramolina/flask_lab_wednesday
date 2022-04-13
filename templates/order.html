@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+    <title>Order Details</title>
+</head>
+<body>
+    
+    <h3>Order Details for {{order.customer_name}}</h3>
+    <ul>
+        <li>Customer: {{order.customer_name}}</li>
+        <li>Order Date: {{order.order_date}}</li>
+        <li>Quantity {{order.quantity}}</li>
+        <li>Product: {{order.product}}</li>
+        <li>Price per unit: {{order.product_price}}</li>
+        <li><h4>Total order:
+            {{ order.get_total_amount() }}    
+        </h4></li>
+    </ul>
+</body>
+</html>
